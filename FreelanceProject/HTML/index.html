@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aman Tradespark FZ-LLC</title>
+  <link rel="stylesheet" href="../CSS/styles.css" />
+  <script src="../JavaScript/script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="../Assets/logo.png" alt="Aman Tradespark Logo" class="logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="dark-toggle">
+      <button id="theme-toggle">🌓</button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="glass-card fade-in">
+      <h1>Empowering Brands Through Trade & Digital Innovation</h1>
+      <p>Licensed in General Trading & E-Commerce by RAKEZ</p>
+      <a href="#contact" class="cta">Let's Collaborate</a>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>
+      Aman Tradespark FZ-LLC is a UAE-based company licensed by RAKEZ to operate in both general trading and e-commerce. Our brand identity reflects growth, trust, and agility through modern solutions.
+    </p>
+  </section>
+
+  <section id="services" class="section bento fade-in">
+    <h2>Our Services</h2>
+    <div class="bento-grid">
+      <div class="bento-box">
+        <img src="icons/trade.svg" alt="Trade" />
+        <h3>Trading Solutions</h3>
+        <p>Wholesale sourcing, distribution, and B2B logistics.</p>
+      </div>
+      <div class="bento-box">
+        <img src="icons/marketing.svg" alt="Marketing" />
+        <h3>Digital Marketing</h3>
+        <p>Branding, social media, content design, and digital campaigns.</p>
+      </div>
+      <div class="bento-box">
+        <img src="/icons/kiosk.svg" alt="Kiosk" />
+        <h3>Interactive Kiosks</h3>
+        <p>Touch-based kiosks and smart displays for retail & events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section fade-in">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <img src="images/project1.jpg" alt="Project 1" />
+      <img src="images/project2.jpg" alt="Project 2" />
+      <img src="images/project3.jpg" alt="Project 3" />
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Contact Us</h2>
+    <p>Let's bring your project to life.</p>
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aman Tradespark FZ-LLC. Powered by Innovation.</p>
+  </footer>
+</body>
+</html>
