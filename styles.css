@@ -128,7 +128,7 @@ nav a:hover::after {
 }
 
 .hero {
-  background: url('../Assets/images/dubai.jpg') no-repeat center/cover;
+  background: url('/dubai.jpg') no-repeat center/cover;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@ nav a:hover::after {
 }
 
 .about-background {
-  background: url('../Assets/images/dubai1.jpg') no-repeat center center/cover;
+  background: url('/dubai1.jpg') no-repeat center center/cover;
   padding: 4rem 2rem;
 }
 
