@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aman Tradespark FZ-LLC</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="Aman Tradespark Logo" class="logo" />
+    </div>
+    <nav>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="dark-toggle">
+      <button id="theme-toggle">🌓</button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="glass-card fade-in">
+      <h1>Your Vision, Our Solutions</h1>
+      <p>Empowering Brands Through Trade & Digital Innovation</p>
+      <a href="#contact" class="cta">Let's Collaborate</a>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in container">
+    <h2>About Aman Tradespark FZ-LLC</h2>
+    <p>Aman Tradespark FZ-LLC is a digital marketing agency specializing in social media marketing, website design & development, PPC, SEO, Google Ads, branding and content creation. We help business owners connect with audiences, build brands, grow businesses, and increase revenue.</p>
+    <h3>Mission</h3>
+    <p>To provide good promotion that enhances visibility and drives more traffic.</p>
+    <h3>Vision</h3>
+    <p>To lead the digital revolution, shaping a brighter future for business through innovative marketing solutions.</p>
+    <h3>Our Values</h3>
+    <p>We value customer success, transparency, integrity, and collaboration.</p>
+  </section>
+
+  <section id="services" class="section bento fade-in">
+    <h2>Our Services</h2>
+    <div class="bento-grid">
+      <div class="bento-box">
+        <i class="fas fa-briefcase fa-3x icon"></i>
+        <h3>Google Business Profile Management</h3>
+        <p>Showcase your business info, updates, reviews, and photos to boost search visibility.</p>
+      </div>
+      <div class="bento-box">
+        <i class="fas fa-thumbs-up fa-3x icon"></i>
+        <h3>Social Media Marketing</h3>
+        <p>Build brand presence and customer engagement through strategic content and social campaigns.</p>
+      </div>
+      <div class="bento-box">
+        <i class="fas fa-bullhorn fa-3x icon"></i>
+        <h3>Google Ads</h3>
+        <p>Drive targeted traffic and measurable results using search and display advertising.</p>
+      </div>
+      <div class="bento-box">
+        <i class="fas fa-search fa-3x icon"></i>
+        <h3>Search Engine Optimization</h3>
+        <p>Optimize content to rank better, attract more organic traffic, and reach the right audience.</p>
+      </div>
+      <div class="bento-box">
+        <i class="fas fa-laptop-code fa-3x icon"></i>
+        <h3>Website Design & Development</h3>
+        <p>Create responsive, elegant websites that connect your brand with your users.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section fade-in">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <img src="google1.jpg" alt="Project 1" />
+        <img src="smm1.jpg" alt="Project 2" />
+        <img src="ads1.jpg" alt="Project 3" />
+        <img src="web1.jpg" alt="Project 4" />
+        <img src="seo2.jpg" alt="Project 5" />
+        <img src="google2.jpg" alt="Project 6" />
+        <img src="smm2.jpg" alt="Project 7" />
+        <img src="ads2.jpeg" alt="Project 8" />
+        <img src="web2.jpg" alt="Project 9" />
+        <img src="seo2.jpg" alt="Project 10" />
+        <img src="google3.png" alt="Project 11" />
+        <img src="smm3.jpg" alt="Project 12" />
+        <img src="ads3.jpg" alt="Project 13" />
+        <img src="web3.jpg" alt="Project 14" />
+        <img src="seo3.png" alt="Project 15" />
+      </div>
+      <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Contact Us</h2>
+    <div class="team-cards">
+      <div class="team-card">
+        <img src="owner.jpg" alt="Aman Singh" />
+        <h3>Aman Singh</h3>
+        <p>Owner</p>
+      </div>
+      <div class="team-card">
+        <img src="director.jpg" alt="Indrajeet Singh" />
+        <h3>Indrajeet Singh</h3>
+        <p>Managing Director</p>
+      </div>
+    </div>
+
+    <div class="contact-details">
+      <p><i class="fas fa-map-marker-alt"></i> Compass Building - Al Hulaila, Ras Al Khaimah, UAE</p>
+      <p><i class="fas fa-envelope"></i> amanadvertisingfz-llc.com</p>
+      <p><i class="fas fa-globe"></i> www.amantradesparkfz-llc.com</p>
+      <p><i class="fas fa-phone"></i> 0547686017 / 0544951733</p>
+      <p><i class="fas fa-clock"></i> Monday to Saturday, 9 AM – 9 PM</p>
+    </div>
+
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aman Tradespark FZ-LLC. Powered by Innovation.</p>
+  </footer>
+</body>
+</html>
