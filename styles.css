@@ -128,7 +128,7 @@ nav a:hover::after {
 }
 
 .hero {
-  background: url('images/hero-bg.jpg') no-repeat center/cover;
+  background: url('dubai.jpg') no-repeat center/cover;
   min-height: 90vh;
   display: flex;
   align-items: center;
