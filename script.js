@@ -25,7 +25,7 @@ function updateSlider() {
 setInterval(() => {
   position = (position + 1) % maxSlides;
   updateSlider();
-}, 4000);
+}, 1500);
 
 // Theme toggle
 const toggle = document.getElementById("theme-toggle");
