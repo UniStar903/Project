@@ -1,66 +1,129 @@
-// Portfolio Carousel Logic
-const track = document.querySelector(".carousel-track");
-const prevBtn = document.querySelector(".carousel-btn.prev");
-const nextBtn = document.querySelector(".carousel-btn.next");
-let position = 0;
-const slideWidth = 320; // Adjust to match image + margin
-const maxSlides = track.children.length-3;
 
-// Manual slide controls
-nextBtn.addEventListener("click", () => {
-  position = (position + 2) % maxSlides;
-  updateSlider();
-});
-prevBtn.addEventListener("click", () => {
-  position = (position - 1 + maxSlides) % maxSlides;
-  updateSlider();
+// 🔁 Background Image Transition (Hero)
+window.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  let isAlt = false;
+
+  setInterval(() => {
+    hero.classList.toggle('alt-bg');
+    isAlt = !isAlt;
+  }, 6000);
 });
 
-function updateSlider() {
-  const offset = position * slideWidth;
-  track.style.transform = `translateX(-${offset}px)`;
+// 🎡 Responsive Portfolio Carousel
+(() => {
+  const track = document.querySelector(".carousel-track");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const slideWidth = 500;
+  const visibleSlides = 7;
+  let position = 0;
+  let intervalId;
+
+  function updateSlider() {
+    if (window.innerWidth > 768) {
+      const maxSlides = track.children.length - visibleSlides;
+      const offset = position * slideWidth;
+      track.style.transform = `translateX(-${offset}px)`;
+      if (position > maxSlides) position = 0;
+    } else {
+      track.style.transform = "none";
+    }
+  }
+
+  let verticalScroll = 0;
+
+  function autoSlide() {
+  if (window.innerWidth > 768) {
+    const maxSlides = track.children.length - visibleSlides;
+    position = (position + 1) % maxSlides;
+    updateSlider();
+  } else {
+    const step = 500;
+    const maxScroll = track.scrollHeight - track.clientHeight;
+
+    verticalScroll += step;
+    if (verticalScroll >= maxScroll) {
+      verticalScroll = 0;
+    }
+
+    track.scrollTop = verticalScroll;
+
+  }
 }
 
-// Autoplay
-setInterval(() => {
-  position = (position + 1) % maxSlides;
-  updateSlider();
-}, 1500);
+  function startAutoScroll() {
+    clearInterval(intervalId);
+    intervalId = setInterval(autoSlide, 1000);
+  }
 
-// Theme toggle
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
+  if (track && prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      const maxSlides = track.children.length - visibleSlides;
+      position = (position - 2 + maxSlides) % maxSlides;
+      updateSlider();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const maxSlides = track.children.length - visibleSlides;
+      position = (position + 2) % maxSlides;
+      updateSlider();
+    });
+
+    track.addEventListener("mouseenter", () => clearInterval(intervalId));
+    track.addEventListener("mouseleave", startAutoScroll);
+    window.addEventListener("resize", () => {
+      position = 0;
+      updateSlider();
+      startAutoScroll();
+    });
+
+    updateSlider();
+    startAutoScroll();
+  }
+})();
+
+// 🌗 Theme Toggle
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+document.getElementById("theme-toggle-mobile")?.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-// Scroll animations
-const faders = document.querySelectorAll(".fade-in");
 
-const appearOnScroll = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
+// 👀 Fade-In on Scroll
+(() => {
+  const faders = document.querySelectorAll(".fade-in");
+
+  const appearOnScroll = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  faders.forEach(el => appearOnScroll.observe(el));
+})();
+
+// 🍔 Hamburger Navigation
+(() => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector("nav ul");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
-  },
-  {
-    threshold: 0.1,
   }
-);
+})();
 
-faders.forEach(el => appearOnScroll.observe(el));
-
-// Hamburger menu toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("nav ul");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// Form handler
+// 📩 Contact Form Submission Handler
 function handleSubmit(event) {
   event.preventDefault();
   alert("Message sent successfully!");
